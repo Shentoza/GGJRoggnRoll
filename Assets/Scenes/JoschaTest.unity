@@ -178,72 +178,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &766086119
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 766086122}
-  - component: {fileID: 766086121}
-  - component: {fileID: 766086120}
-  m_Layer: 0
-  m_Name: InputManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &766086120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 766086119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d83dd66ddd2c0947b24adbf92b29ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &766086121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 766086119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3cd14b05ab14634394812614e042eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActionMappings:
-  - ActionName: Jump
-    Keys: 20000000090000000d000000
-  - ActionName: 
-    Keys: 
-  - ActionName: 
-    Keys: 
-  AxisMappings:
-  - AxisName: Left
-    AxisKeys:
-    - Horizontal
-  - AxisName: Up
-    AxisKeys:
-    - Vertical
---- !u!4 &766086122
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 766086119}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.52, y: -1.5424497, z: 0.43}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1063656715
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +189,7 @@ GameObject:
   - component: {fileID: 1063656718}
   - component: {fileID: 1063656717}
   - component: {fileID: 1063656716}
+  - component: {fileID: 1063656720}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -326,6 +261,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1063656720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1063656715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36e2d99f701e44044ab944f894c69962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1845406058
 GameObject:
   m_ObjectHideFlags: 0

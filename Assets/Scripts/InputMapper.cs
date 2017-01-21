@@ -85,7 +85,8 @@ public class Axis
 	}
 }
 
-public class InputMapper : MonoBehaviour {
+[Prefab("Prefabs/Singletons/InputMapper", true)]
+public class InputMapper : Singleton<InputMapper> {
 
 	public List<Action>	ActionMappings;
 	public List<Axis>   AxisMappings;
