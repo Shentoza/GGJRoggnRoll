@@ -1,4 +1,4 @@
-﻿#undef DEBUG
+﻿#define DEBUG
 
 using System.Collections;
 using System.Collections.Generic;
@@ -7,14 +7,19 @@ using UnityEngine;
 
 public delegate void OnAction();
 
-
+//Action is a custom  class, which stores a delegate to notify all Object, which registered to it. The signature of the delegate is:
+//void FunctionName()
 [System.Serializable]
 public class Action
 {
+	//The Name of the Action (e.g. "Jump", "Fire"...)
 	public string ActionName;
+
+	//The Keys which trigger the Action Delegate
 	public List<KeyCode> Keys;
 
 	OnAction OnActionDel;
+
 
 	public Action(string InActionName, List<KeyCode> InKeys)
 	{
@@ -22,11 +27,14 @@ public class Action
 		Keys = InKeys;
 	}
 
+	//Adds an Action Method to the Delegate
 	public void AddAction(OnAction Action)
 	{
 		OnActionDel += Action;
 	}
 
+	//This Method throws the delegate if one of the given keys is currently pressed
+	//@return: whether one of the keys are currently pressed or not
 	public bool CheckAction()
 	{
 		foreach (KeyCode Key in Keys) 
@@ -46,6 +54,8 @@ public class Action
 
 public delegate void OnAxis(float Value);
 
+//Axis is a custom  class, which stores a delegate to notify all Object, which registered to it. The signature of the delegate is:
+//void FunctionName(float ValueParam)
 [System.Serializable]
 public class Axis
 {
@@ -60,11 +70,14 @@ public class Axis
 		AxisKeys = InAxisKeys;
 	}
 
+	//Adds an Action Method to the Delegate
 	public void AddAxis(OnAxis Axis)
 	{
 		OnAxisDel += Axis;
 	}
 
+	//This Method throws the delegate if one of the given keys is currently moved
+	//@return: whether one of the keys are currently moved or not
 	public bool CheckAxis()
 	{
 		foreach (string AxisKey in AxisKeys) 
@@ -85,7 +98,8 @@ public class Axis
 	}
 }
 
-public class InputMapper : MonoBehaviour {
+[Prefab("Prefabs/Singletons/InputMapper", true)]
+public class InputMapper : Singleton<InputMapper> {
 
 	public List<Action>	ActionMappings;
 	public List<Axis>   AxisMappings;
@@ -120,7 +134,7 @@ public class InputMapper : MonoBehaviour {
 			axis.CheckAxis ();
 		}
 	}
-
+		
 	public void AddActionMapping(string ActionName, OnAction Action)
 	{
 		foreach (Action action in ActionMappings) 
@@ -132,6 +146,8 @@ public class InputMapper : MonoBehaviour {
 				return;
 			}
 		}
+
+		Debug.LogWarning("Could not find Action: " + ActionName);
 	}
 
 	public void AddAxisMapping(string AxisName, OnAxis Axis)
@@ -147,5 +163,7 @@ public class InputMapper : MonoBehaviour {
 				return;
 			}
 		}
+
+		Debug.LogWarning("Could not find Axis: " + AxisName);
 	}
 }
