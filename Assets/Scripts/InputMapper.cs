@@ -74,7 +74,7 @@ public class Axis
 			{
 				if (OnAxisDel != null) {
 					OnAxisDel (AxisValue);
-					Debug.Log (AxisValue);
+					//Debug.Log (AxisValue);
 
 				}
 				return true;
@@ -97,7 +97,7 @@ public class InputMapper : MonoBehaviour {
 
 	public void Yo (float Yo)
 	{
-		Debug.Log ("Yo" + Yo);
+		//Debug.Log ("Yo" + Yo);
 	}
 
 	// Use this for initialization
@@ -138,10 +138,10 @@ public class InputMapper : MonoBehaviour {
 	{
 		foreach (Axis axis in AxisMappings) 
 		{
-			Debug.Log(axis.AxisName + " " + AxisName);
+			//Debug.Log(axis.AxisName + " " + AxisName);
 			if (axis.AxisName == AxisName) 
 			{
-				Debug.Log ("Added AxisMapping");
+				//Debug.Log ("Added AxisMapping");
 				axis.AddAxis (Axis);
 
 				return;
