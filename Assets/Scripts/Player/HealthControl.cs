@@ -22,13 +22,15 @@ public class HealthControl : MonoBehaviour
 	{
 		health -= damage;
 
+		//TODO: put damage effect here!
+
 		if ( health <= 0 ) Death();
 	}
 
 	public void Death()
 	{
 		//TODO: put death logic here!
-
+		
 		Debug.Log( "DEATH!" );
 	}
 }

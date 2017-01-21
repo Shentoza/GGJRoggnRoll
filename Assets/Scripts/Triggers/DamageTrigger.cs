@@ -28,8 +28,6 @@ public class DamageTrigger : MonoBehaviour
 
 	void Damage()
 	{
-		//TODO: put damage effect here!
-
 		healthControl.Damage( damage );
 	}
 }
