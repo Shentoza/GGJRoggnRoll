@@ -9,6 +9,9 @@ public class BreadControl : MonoBehaviour
 	public float pullSpeed = 50.0f;
 	public float maxSleep = 0.5f;
 
+	public Material face;
+	public Material angry;
+
 	private int pullPoint;
 	private float inactive;
 	private bool launched;
