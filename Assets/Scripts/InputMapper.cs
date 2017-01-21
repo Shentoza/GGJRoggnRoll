@@ -70,22 +70,22 @@ public class Axis
 		foreach (string AxisKey in AxisKeys) 
 		{
 			float AxisValue = Input.GetAxis (AxisKey);
-			if (AxisValue <= -0.01f || AxisValue >= 0.01f)
-			{
-				if (OnAxisDel != null) {
-					OnAxisDel (AxisValue);
-					Debug.Log (AxisValue);
+			//if (AxisValue <= -0.01f || AxisValue >= 0.01f)
+			//{
+			if (OnAxisDel != null) {
+				OnAxisDel (AxisValue);
+				//Debug.Log (AxisValue);
 
-				}
-				return true;
 			}
+			return true;
+			//}
 		}
 
 		return false;
 	}
 }
 
-[Prefab("Prefabs/Singletons/InputMapper", true)]
+[Prefab("Prefabs/Singletons/InputMapper", false)]
 public class InputMapper : Singleton<InputMapper> {
 
 	public List<Action>	ActionMappings;
@@ -139,10 +139,10 @@ public class InputMapper : Singleton<InputMapper> {
 	{
 		foreach (Axis axis in AxisMappings) 
 		{
-			Debug.Log(axis.AxisName + " " + AxisName);
+			//Debug.Log(axis.AxisName + " " + AxisName);
 			if (axis.AxisName == AxisName) 
 			{
-				Debug.Log ("Added AxisMapping");
+				//Debug.Log ("Added AxisMapping");
 				axis.AddAxis (Axis);
 
 				return;
