@@ -111,7 +111,7 @@ public class InputMapper : Singleton<InputMapper> {
 
 	public void Yo (float Yo)
 	{
-		Debug.Log ("Yo" + Yo);
+		//Debug.Log ("Yo" + Yo);
 	}
 
 	// Use this for initialization
