@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageTrigger : MonoBehaviour
+public class AudioTrigger : MonoBehaviour
 {
-	public HealthControl healthControl;
-
-	public int damage = 1;
+	public AudioClip audioClip;
 
 	// Use this for initialization
 	void Start()
@@ -17,16 +15,17 @@ public class DamageTrigger : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+
 	}
 
 	void OnTriggerEnter( Collider collider )
 	{
 		if ( collider.tag == "Player" )
-			Damage();
+			Play();
 	}
 
-	void Damage()
+	void Play()
 	{
-		healthControl.Damage( damage );
+		AudioSource.PlayClipAtPoint( audioClip, transform.position );
 	}
 }
