@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RepeatSound : MonoBehaviour
+public class RepeatSound : TriggerTarget
 {
 	public float interval = 1.0f;
+	public bool on = true;
 
 	private float timer;
 
@@ -18,7 +19,7 @@ public class RepeatSound : MonoBehaviour
 	{
 		float tpf = Time.deltaTime;
 
-		timer += tpf;
+		if ( on ) timer += tpf;
 
 		if ( timer >= interval )
 		{
@@ -26,5 +27,12 @@ public class RepeatSound : MonoBehaviour
 
 			timer = 0.0f;
 		}
+	}
+
+	public override void Trigger()
+	{
+		Debug.Log( "TRIGGER" );
+
+		on = !on;
 	}
 }
