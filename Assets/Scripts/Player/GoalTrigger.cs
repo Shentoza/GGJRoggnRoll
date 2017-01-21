@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageTrigger : MonoBehaviour
+public class GoalTrigger : MonoBehaviour
 {
-	public HealthControl healthControl;
-
-	public int damage = 1;
 
 	// Use this for initialization
 	void Start()
@@ -23,13 +20,13 @@ public class DamageTrigger : MonoBehaviour
 	void OnTriggerEnter( Collider collider )
 	{
 		if ( collider.tag == "Player" )
-			Damage();
+			GameWon();
 	}
 
-	void Damage()
+	void GameWon()
 	{
-		//TODO: put damage effect here!
+		//TODO: put game won logic here!
 
-		healthControl.Damage( damage );
+		Debug.Log( "Yeehaw!!!" );
 	}
 }
