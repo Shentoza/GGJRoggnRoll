@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SoundSource : MonoBehaviour
 {
-	public int maxLights = 4;
+	public int maxLights = 1;
 
 	private GameObject[] lights;
 	private int lightIndex;
@@ -27,8 +27,8 @@ public class SoundSource : MonoBehaviour
 			Light lightComp = light.AddComponent<Light>();
 
 			lightComp.type = LightType.Point;
-			lightComp.range = 3;
-			lightComp.intensity = 3;
+			lightComp.range = 0;
+			lightComp.intensity = 0;
 
 			lights[ i ] = light;
 		}

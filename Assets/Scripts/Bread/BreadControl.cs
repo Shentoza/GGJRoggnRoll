@@ -7,13 +7,17 @@ public class BreadControl : MonoBehaviour
 	public RopeControl rope;
 
 	public float pullSpeed = 50.0f;
+	public float maxSleep = 0.5f;
 
 	private int pullPoint;
+	private float inactive;
+	private bool launched;
 
 	// Use this for initialization
 	void Start()
 	{
-		
+		SetVisible( false );
+		SetPhysicsActive( false );
 	}
 
 	// Update is called once per frame
@@ -33,7 +37,26 @@ public class BreadControl : MonoBehaviour
 			{
 				transform.position = b;
 				pullPoint--;
+
+				if ( pullPoint == 0 )
+				{
+					SetVisible( false );
+				}
 			}
+		}
+
+		if ( GetComponent<Rigidbody>().IsSleeping() )
+		{
+			inactive += tpf;
+			
+			if ( inactive >= maxSleep )
+			{
+				Pull();
+			}
+		}
+		else
+		{
+			inactive = 0.0f;
 		}
 	}
 
@@ -44,12 +67,14 @@ public class BreadControl : MonoBehaviour
 
 	public void Launch( Vector3 position, Vector3 direction )
 	{
+		SetVisible( true );
 		SetPhysicsActive( true );
 
 		transform.position = position;
 		transform.LookAt( position + direction );
 		transform.Rotate( Vector3.up, 90 );
 
+		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		GetComponent<Rigidbody>().AddForce( direction * 1000 );
 		
 		rope.ResetAll( position );
@@ -71,5 +96,10 @@ public class BreadControl : MonoBehaviour
 		GetComponent<Rigidbody>().detectCollisions = active;
 
 		rope.SetVisible( active );
+	}
+
+	public void SetVisible( bool visible )
+	{
+		gameObject.SetActive( visible );
 	}
 }
