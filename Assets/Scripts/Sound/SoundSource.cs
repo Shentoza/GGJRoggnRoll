@@ -22,6 +22,7 @@ public class SoundSource : MonoBehaviour
 		for ( int i = 0; i < maxLights; i++ )
 		{
 			GameObject light = new GameObject( "SoundLight" );
+			light.SetActive( false );
 			light.tag = "SoundSource";
 
 			Light lightComp = light.AddComponent<Light>();
@@ -53,6 +54,8 @@ public class SoundSource : MonoBehaviour
 		lightComp.intensity = initialIntensity;
 		lightComp.range = initialRange;
 
+		light.SetActive( true );
+
 		lightIndex++;
 
 		if ( lightIndex >= maxLights ) lightIndex = 0;
@@ -77,6 +80,7 @@ public class SoundSource : MonoBehaviour
 			{
 				lightComp.intensity = 0;
 				lightComp.range = 0;
+				light.SetActive( false );
 			}
 		}
 	}
