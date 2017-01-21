@@ -19,6 +19,7 @@ public class SoundCollider : MonoBehaviour
 
 	void OnCollisionEnter( Collision collision )
 	{
-		GetComponent<SoundSource>().Emit( transform.position );
+		if ( collision.transform.name != "Bread" )
+			GetComponent<SoundSource>().Emit( transform.position );
 	}
 }
