@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 931108059}
   - component: {fileID: 931108061}
   - component: {fileID: 931108060}
+  - component: {fileID: 931108062}
   m_Layer: 0
   m_Name: Healthbar
   m_TagString: Untagged
@@ -412,13 +413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abe9494349f10f4c86340b33bf63467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health4: {fileID: 21300000, guid: 467c00427f3845d42811854fd01b523f, type: 3}
-  health3: {fileID: 21300000, guid: 6ea6671b5f0418145a60321a27243445, type: 3}
-  health2: {fileID: 21300000, guid: f06ad9c5d150b674ab0e1370eef27a70, type: 3}
-  health1: {fileID: 21300000, guid: 6ea6671b5f0418145a60321a27243445, type: 3}
-  health0: {fileID: 21300000, guid: 6ea6671b5f0418145a60321a27243445, type: 3}
-  health: 4
-  gameOverCanvas: {fileID: 1832908409}
 --- !u!212 &931108061
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -454,6 +448,24 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &931108062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931108058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76b4c9f0caf6f40a61ebf2a6413ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health4: {fileID: 21300000, guid: 1600bd19de5c91e43b23e58e5085f000, type: 3}
+  health3: {fileID: 21300000, guid: 7edbe5599f1899f4290e2abbb48c16c9, type: 3}
+  health2: {fileID: 21300000, guid: ee55874e81a4fca4b9819a3147f5a99c, type: 3}
+  health1: {fileID: 21300000, guid: b7d3b48cc59bcff44a35095f2169bc84, type: 3}
+  health0: {fileID: 21300000, guid: b7d3b48cc59bcff44a35095f2169bc84, type: 3}
+  health: 4
+  gameOverCanvas: {fileID: 1832908409}
 --- !u!1 &1007131944
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +651,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1569806760}
+  - component: {fileID: 1569806761}
   m_Layer: 0
   m_Name: HealthbarTest
   m_TagString: Untagged
@@ -660,6 +673,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1569806761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1569806759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76b4c9f0caf6f40a61ebf2a6413ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health4: {fileID: 0}
+  health3: {fileID: 0}
+  health2: {fileID: 0}
+  health1: {fileID: 0}
+  health0: {fileID: 0}
+  health: 4
+  gameOverCanvas: {fileID: 0}
 --- !u!1 &1832908409
 GameObject:
   m_ObjectHideFlags: 0
