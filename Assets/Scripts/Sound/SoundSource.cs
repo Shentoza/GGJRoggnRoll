@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SoundSource : MonoBehaviour
 {
-	public int maxLights = 4;
+	public int maxLights = 1;
 
 	private GameObject[] lights;
 	private int lightIndex;
@@ -22,11 +22,14 @@ public class SoundSource : MonoBehaviour
 		for ( int i = 0; i < maxLights; i++ )
 		{
 			GameObject light = new GameObject( "SoundLight" );
+			light.SetActive( false );
+			light.tag = "SoundSource";
+
 			Light lightComp = light.AddComponent<Light>();
 
 			lightComp.type = LightType.Point;
-			lightComp.range = 3;
-			lightComp.intensity = 3;
+			lightComp.range = 0;
+			lightComp.intensity = 0;
 
 			lights[ i ] = light;
 		}
@@ -50,6 +53,8 @@ public class SoundSource : MonoBehaviour
 		light.transform.position = worldPosition;
 		lightComp.intensity = initialIntensity;
 		lightComp.range = initialRange;
+
+		light.SetActive( true );
 
 		lightIndex++;
 
@@ -75,6 +80,7 @@ public class SoundSource : MonoBehaviour
 			{
 				lightComp.intensity = 0;
 				lightComp.range = 0;
+				light.SetActive( false );
 			}
 		}
 	}
