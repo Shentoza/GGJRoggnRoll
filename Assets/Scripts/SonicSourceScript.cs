@@ -30,7 +30,7 @@ public class SonicSourceScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        intensity -= 0.001f;
+        intensity -= 0.005f;
         if (intensity <= 0.0f)
         {
             foreach (GameObject sphere in sphereList)
