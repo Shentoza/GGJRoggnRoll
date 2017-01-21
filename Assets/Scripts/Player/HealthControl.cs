@@ -5,24 +5,25 @@ using UnityEngine;
 public class HealthControl : MonoBehaviour
 {
 	public int health = 4;
+    private HealthBarBehaviour hbBehaviour;
 
 	// Use this for initialization
 	void Start()
 	{
-
+        hbBehaviour = new HealthBarBehaviour();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		
-	}
+        
+    }
 
 	public void Damage( int damage )
 	{
 		health -= damage;
 
-		//TODO: put damage effect here!
+        hbBehaviour.ChangeSprite(health);
 
 		if ( health <= 0 ) Death();
 	}
