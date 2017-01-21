@@ -98,9 +98,8 @@ public class Axis
 	}
 }
 
-
-//The InputMapper is the main class to define Action and Axis InputMappings
-public class InputMapper : MonoBehaviour {
+[Prefab("Prefabs/Singletons/InputMapper", true)]
+public class InputMapper : Singleton<InputMapper> {
 
 	public List<Action>	ActionMappings;
 	public List<Axis>   AxisMappings;
