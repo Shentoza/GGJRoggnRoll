@@ -330,6 +330,8 @@ MonoBehaviour:
   rope: {fileID: 114491262654808882}
   pullSpeed: 20
   maxSleep: 0.5
+  face: {fileID: 2100000, guid: 555dfdf7d7c530842a3bc03bc85f75dd, type: 2}
+  angry: {fileID: 2100000, guid: 4f4dbf37ddc044f4dac223b6c62aec21, type: 2}
 --- !u!120 &120652907551913866
 LineRenderer:
   m_ObjectHideFlags: 1
