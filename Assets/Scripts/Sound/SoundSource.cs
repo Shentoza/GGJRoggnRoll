@@ -22,6 +22,8 @@ public class SoundSource : MonoBehaviour
 		for ( int i = 0; i < maxLights; i++ )
 		{
 			GameObject light = new GameObject( "SoundLight" );
+			light.tag = "SoundSource";
+
 			Light lightComp = light.AddComponent<Light>();
 
 			lightComp.type = LightType.Point;

@@ -19,8 +19,6 @@ public class BreadControl : MonoBehaviour
 
 	void OnCollisionEnter( Collision collision )
 	{
-		Debug.Log( "Collision: " + collision );
-
 		sound.Emit( transform.position );
 	}
 
@@ -31,5 +29,10 @@ public class BreadControl : MonoBehaviour
 		transform.Rotate( Vector3.up, 90 );
 
 		GetComponent<Rigidbody>().AddForce( direction * 1000 );
+
+		Vector3 ropeOrigin = new Vector3( position.x, position.y, position.z );
+
+		GetComponent<RopeControl>().ResetAll( ropeOrigin );
+		GetComponent<RopeControl>().AddPoint( ropeOrigin );
 	}
 }
