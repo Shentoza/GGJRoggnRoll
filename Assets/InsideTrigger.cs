@@ -10,7 +10,7 @@ public class InsideTrigger : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void OnTriggerEnter (Collider collider) {
 		
 	}
 }
