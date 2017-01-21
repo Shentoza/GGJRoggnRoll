@@ -32,50 +32,68 @@ Shader "FabioTest/EchoVisualizer"
 
 			uniform float4 _LightColor0;
 
+			float4 SoundSourceProperties[8];
+
 			float3 PointLightPosition;
 
 			struct vertexInput
 			{
 				float4 vertex : POSITION;
-				float3 normal : NORMAL;
+				float2 uv : TEXCOORD;
 			};
 
 			struct vertexOutput
 			{
-				float4 pos : SV_POSITION;
-				float4 posWorld : TEXCOORD0;
-				float3 normalDir : TEXCOORD1;
+				float4 posWorld : SV_POSITION;
+				float2 _uv : TEXCOORD0;
+				float4 pos : TEXCOORD1;
 			};
+
+			float2 unpack_float(float x)
+			{
+				int a = (int)(x / 1000);
+				int b = (int)(x - (a * 1000));
+
+				return float2 (a, b);
+			}
 
 			vertexOutput vert(vertexInput v)
 			{
 				vertexOutput o;
-				o.posWorld = mul(unity_ObjectToWorld, v.vertex);
-				o.normalDir = normalize(mul(float4(v.normal, 0.0), unity_WorldToObject).xyz);
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-
+				o.pos = mul(unity_ObjectToWorld, v.vertex);
+				o._uv = v.uv;
+				//o.normalDir = normalize(mul(float4(v.normal, 0.0), unity_WorldToObject).xyz);
+				o.posWorld = mul(UNITY_MATRIX_MVP, v.vertex);
 
 				return o;
 			}
 
-			float4 frag(vertexOutput i) : COLOR
+			float4 frag(vertexOutput vOut) : COLOR
 			{
-				float3 normalDirection = i.normalDir;
-				float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
-				float3 lightDirection = normalize(float3(unity_4LightPosX0[0], unity_4LightPosY0[0], unity_4LightPosZ0[0]));
-				float atten = 1.0;
+				float3 pos;
+				float _range = 0;
 
-				float3 diffuseReflection = atten * _LightColor0.xyz * saturate(dot(normalDirection, lightDirection));
-				float3 specularReflection = atten * _LightColor0.xyz * saturate(dot(normalDirection, lightDirection)) * pow(saturate(dot(reflect(-lightDirection, normalDirection), viewDirection)), 2.0);
+				float4 OutColor = float4(1.0,0.0,0.0,1.0);
 
-				float rim = 1 - saturate(dot(normalize(viewDirection), normalDirection));
-				float3 rimLighting = atten * _LightColor0.xyz * _RimColor * saturate(dot(normalDirection, lightDirection)) * pow(rim, _RimPower);
+				//for(int i = 0; i < 8; i++)
+				{
+					PointLightPosition = float3(SoundSourceProperties[0].xyz);
+					pos+=PointLightPosition;
+					float2 IntensityAndRange = unpack_float(SoundSourceProperties[0].w);
 
-				float3 lightFinal = rimLighting + diffuseReflection + specularReflection * UNITY_LIGHTMODEL_AMBIENT.rgb;
+					_range = IntensityAndRange.y * 0.01;
 
-				PointLightPosition = float3(unity_4LightPosX0[0], unity_4LightPosY0[0], unity_4LightPosZ0[0]);
+					float3 DirectionToLight = PointLightPosition.xyz - vOut.pos.xyz;
+					float DistanceToLight = length(DirectionToLight);
 
-				return float4(PointLightPosition, 1.0);
+					//if((0.5f*cos(DistanceToLight*100)) >= 0)
+					//	OutColor = float4(1.0,1.0,1.0,1.0) * _range;
+
+					if(sin(DistanceToLight + _Time.y)*2 < 1.0f)
+						OutColor = float4(1.0,1.0,1.0,1.0) * _range;
+				}
+
+				return OutColor;//float4(OutColor, 1.0);
 			}
 
 			ENDCG

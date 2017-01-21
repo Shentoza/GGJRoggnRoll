@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EchoMaterialManager : MonoBehaviour {
-
-	MeshRenderer Mesh;
+public class EchoTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Mesh = GetComponent<MeshRenderer> ();
-		
+		EchoMaterialManager Manager = EchoMaterialManager.Instance;
 	}
 	
 	// Update is called once per frame
