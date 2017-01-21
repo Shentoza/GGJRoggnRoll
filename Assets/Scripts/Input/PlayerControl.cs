@@ -12,11 +12,10 @@ public class PlayerControl : MonoBehaviour {
 
 
 	void Start () {
-        InputMapper input = FindObjectOfType<InputMapper>();
         rig = GetComponent<Rigidbody>();
-        input.AddAxisMapping("Horizontal", Strafe);
-        input.AddAxisMapping("Vertical", Walk);
-        input.AddActionMapping("Jump", Jump);
+        InputMapper.Instance.AddAxisMapping("Horizontal", Strafe);
+        InputMapper.Instance.AddAxisMapping("Vertical", Walk);
+        InputMapper.Instance.AddActionMapping("Jump", Jump);
     }
 
     void Strafe(float axisValue)
