@@ -91,5 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999295cc9fa41854cb5af8c43989ae04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SonicSpherePrefab: {fileID: 1526473015003516}
   owner: {fileID: 0}
   intensity: 0
+  range: 0
+  MaxRange: 10
+  velocity: 1

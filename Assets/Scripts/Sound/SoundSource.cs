@@ -3,10 +3,12 @@ using System.Collections;
 
 public class SoundSource : MonoBehaviour
 {
-	public int maxLights = 1;
+	public int maxSonicSources = 5;
 
-	private GameObject[] lights;
-	private int lightIndex;
+	private GameObject[] SonicSources;
+	private int SonicSourceIndex;
+
+	public GameObject SonicSourcePrefab;
 
 	public float initialIntensity = 0.001f;
 	public float initialRange = 0.001f;
@@ -17,71 +19,40 @@ public class SoundSource : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		lights = new GameObject[ maxLights ];
+		SonicSources = new GameObject[ maxSonicSources ];
 
-		for ( int i = 0; i < maxLights; i++ )
+		for ( int i = 0; i < maxSonicSources; i++ )
 		{
-			GameObject light = new GameObject( "SoundLight" );
-			light.SetActive( false );
-			light.tag = "SoundSource";
+			GameObject SonicSource = Instantiate (SonicSourcePrefab);
 
-			Light lightComp = light.AddComponent<Light>();
-
-			lightComp.type = LightType.Point;
-			lightComp.range = 0;
-			lightComp.intensity = 0;
-
-			lights[ i ] = light;
+			SonicSourceScript SonicSourceComp = SonicSource.AddComponent<SonicSourceScript>();
+			SonicSources[ i ] = SonicSource;
 		}
 
-		lightIndex = 0;
+		SonicSourceIndex = 0;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		float tpf = Time.deltaTime;
-
-		UpdateLights( tpf );
+		
 	}
 
 	public void Emit( Vector3 worldPosition )
 	{
-		GameObject light = lights[ lightIndex ];
-		Light lightComp = light.GetComponent<Light>();
+		GameObject SonicSource = SonicSources[ SonicSourceIndex ];
+		SonicSourceScript SonicSourceComp = SonicSource.GetComponent<SonicSourceScript>();
 
-		light.transform.position = worldPosition;
-		lightComp.intensity = initialIntensity;
-		lightComp.range = initialRange;
+		SonicSource.transform.position = worldPosition;
+		SonicSource.SetActive( true );
 
-		light.SetActive( true );
+		SonicSourceIndex++;
 
-		lightIndex++;
-
-		if ( lightIndex >= maxLights ) lightIndex = 0;
+		if ( SonicSourceIndex >= maxSonicSources ) SonicSourceIndex = 0;
 	}
 
-	public void UpdateLights( float tpf )
+	void OnCollisionEnter( Collision collision )
 	{
-		for ( int i = 0; i < maxLights; i++ )
-		{
-			GameObject light = lights[ i ];
-			Light lightComp = light.GetComponent<Light>();
-
-			if ( lightComp.range >= initialRange )
-			{
-				float inc = speed * tpf;
-
-				lightComp.intensity += inc;
-				lightComp.range += inc;
-			}
-
-			if ( lightComp.range > maxRange )
-			{
-				lightComp.intensity = 0;
-				lightComp.range = 0;
-				light.SetActive( false );
-			}
-		}
+		Emit( transform.position );
 	}
 }

@@ -54,6 +54,8 @@ MonoBehaviour:
   ActionMappings:
   - ActionName: Jump
     Keys: 200000004a010000
+  - ActionName: Exit
+    Keys: 1b000000
   AxisMappings:
   - AxisName: Left
     AxisKeys:
