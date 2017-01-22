@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections	;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,6 +43,7 @@ public class AudioTrigger : MonoBehaviour
 
 	void Play()
 	{
-		AudioSource.PlayClipAtPoint( audioClip, transform.position );
+		if ( audioClip )
+			AudioSource.PlayClipAtPoint( audioClip, transform.position );
 	}
 }
