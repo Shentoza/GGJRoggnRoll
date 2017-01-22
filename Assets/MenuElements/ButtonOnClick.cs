@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonOnClick : MonoBehaviour {
 
-    public void LoadByIndex(int sceneIndex)
+    public void LoadByIndex()
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene("AndisFinalScene");
     }
 
     
