@@ -22,9 +22,11 @@ public class SmoothMouseLook : MonoBehaviour
 
     private List<float> rotArrayX = new List<float>();
     float rotAverageX = 0F;
+    float oldRotAverageX = 0F;
 
     private List<float> rotArrayY = new List<float>();
     float rotAverageY = 0F;
+    float oldRotAverageY = 0F;
 
     public float frameCounter = 20;
 
@@ -61,14 +63,24 @@ public class SmoothMouseLook : MonoBehaviour
                 rotAverageX += rotArrayX[i];
             }
 
-            rotAverageY /= rotArrayY.Count;
             rotAverageX /= rotArrayX.Count;
-
-            rotAverageY = ClampAngle(rotAverageY, minimumY, maximumY);
             rotAverageX = ClampAngle(rotAverageX, minimumX, maximumX);
 
-            Quaternion yQuaternion = Quaternion.AngleAxis(rotAverageY, Vector3.left);
-            Quaternion xQuaternion = Quaternion.AngleAxis(rotAverageX, Vector3.up);
+            rotAverageY = ClampAngle(rotAverageY, minimumY, maximumY);
+            rotAverageY /= rotArrayY.Count;
+            Quaternion xQuaternion = Quaternion.identity;
+            Quaternion yQuaternion = Quaternion.identity;
+
+            if(oldRotAverageX != rotAverageX)
+            {
+                xQuaternion = Quaternion.AngleAxis(rotAverageX, Vector3.up);
+                oldRotAverageX = rotAverageX;
+            }
+            if(oldRotAverageY != rotAverageY)
+            {
+                yQuaternion = Quaternion.AngleAxis(rotAverageY, Vector3.left);
+                oldRotAverageY = rotAverageY;
+            }
 
             transform.localRotation = originalRotation * xQuaternion * yQuaternion;
         }
@@ -89,11 +101,14 @@ public class SmoothMouseLook : MonoBehaviour
                 rotAverageX += rotArrayX[i];
             }
             rotAverageX /= rotArrayX.Count;
-
             rotAverageX = ClampAngle(rotAverageX, minimumX, maximumX);
 
-            Quaternion xQuaternion = Quaternion.AngleAxis(rotAverageX, Vector3.up);
-            transform.localRotation = originalRotation * xQuaternion;
+            if(oldRotAverageX != rotAverageX)
+            {
+                Quaternion xQuaternion = Quaternion.AngleAxis(rotAverageX, Vector3.up);
+                transform.localRotation = originalRotation * xQuaternion;
+                oldRotAverageX = rotAverageX;
+            }
         }
         else
         {
@@ -112,11 +127,15 @@ public class SmoothMouseLook : MonoBehaviour
                 rotAverageY += rotArrayY[j];
             }
             rotAverageY /= rotArrayY.Count;
-
             rotAverageY = ClampAngle(rotAverageY, minimumY, maximumY);
 
-            Quaternion yQuaternion = Quaternion.AngleAxis(rotAverageY, Vector3.left);
-            transform.localRotation = originalRotation * yQuaternion;
+            if(oldRotAverageY != rotAverageY)
+            {
+                Quaternion yQuaternion = Quaternion.AngleAxis(rotAverageY, Vector3.left);
+                transform.localRotation = originalRotation * yQuaternion;
+                oldRotAverageY = rotAverageY;
+            }
+            Debug.Log(rotAverageY);
         }
     }
 

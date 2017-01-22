@@ -23,7 +23,6 @@ public class PlayerControl : MonoBehaviour {
 
     void Update()
     {
-
     }
 
     
@@ -31,7 +30,6 @@ public class PlayerControl : MonoBehaviour {
     {
         foreach(ContactPoint cp in other.contacts)
         {
-            Debug.Log(cp.point.y);
             if (Mathf.Abs(transform.position.y - cp.point.y) < 1.1 && rig.velocity.y <= 0.1f)
                 isGrounded = true;
         }

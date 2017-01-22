@@ -103,9 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76806479d916a64aa03f8e3eba7912f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  distance: 2.06
-  height: 0.5
+  followTarget: {fileID: 0}
+  viewTarget: {fileID: 0}
+  distance: 1.51
+  height: 0
   rotationDamping: 8
   heightDamping: 5.01
 --- !u!124 &124220873094208312
