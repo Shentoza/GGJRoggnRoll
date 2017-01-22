@@ -38,7 +38,7 @@ public class EchoMaterialManager : Singleton<EchoMaterialManager>
 			MeshRenderer Mesh = GameObject.GetComponent<MeshRenderer> ();
 
 			List<Color> LightPropertiesArray = new List<Color> ();
-			for (int i = 0; i < 100; i++)
+			for (int i = 0; i < 200; i++)
 				LightPropertiesArray.Add (new Color (-10000, -10000, -10000, -10000));
 			if (Mesh != null) 
 			{

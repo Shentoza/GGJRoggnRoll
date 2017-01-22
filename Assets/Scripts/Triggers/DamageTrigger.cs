@@ -27,6 +27,7 @@ public class DamageTrigger : MonoBehaviour
 
 	void Damage()
 	{
-		healthControl.Damage( damage );
+		if(healthControl != null)
+			healthControl.Damage( damage );
 	}
 }

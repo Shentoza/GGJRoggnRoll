@@ -26,7 +26,7 @@ public class EchoEmitter : MonoBehaviour {
 		if (!(collision.gameObject.tag == "Player")) {
 			if (CanStartCollision) {
 				foreach (ContactPoint Point in collision.contacts) {
-					Manager.SpawnEcho (Point.point, Mathf.Clamp (collision.impulse.magnitude, 5.0f, 100.0f), collision.impulse.magnitude * 2);
+					Manager.SpawnEcho (Point.point, Mathf.Clamp (collision.impulse.magnitude, 1.0f, 10.0f), collision.impulse.magnitude * 0.4f);
 				}
 			}
 		}

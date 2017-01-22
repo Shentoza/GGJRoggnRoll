@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundTrigger : TriggerTarget
 {
-	public TriggerTarget target;
+	public GameObject target;
 	public bool once = false;
 
 	public AudioClip Clip;
@@ -12,6 +12,9 @@ public class SoundTrigger : TriggerTarget
 
 	public float intensity = 5;
 	public float MaxSoundRange = 4;
+
+	float timer = 0;
+	bool isPlaying = false;
 
 	private bool triggered;
 
@@ -24,12 +27,21 @@ public class SoundTrigger : TriggerTarget
 	// Update is called once per frame
 	void Update()
 	{
+		if (isPlaying) {
+			timer += Time.deltaTime;
+			if (timer >= Clip.length) {
+				timer = 0;
+				isPlaying = false;
+			}
+		}
 	}
 
 	public void ManageTrigger()
 	{
-		AudioSource.PlayClipAtPoint (Clip, target.transform.position);
-		target.Trigger ();
+		//if(!isPlaying)
+			//AudioSource.PlayClipAtPoint (Clip, target.transform.position);
+		isPlaying = true;
+
 		EchoMaterialManager.Instance.SpawnEcho (target.transform.position, intensity, MaxSoundRange);
 	}
 
