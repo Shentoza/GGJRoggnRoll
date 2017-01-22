@@ -17,7 +17,12 @@ public class BreadLauncher : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		GetComponent<PlayerControl>().setBreadThrown( bread.IsLaunched() );
+		PlayerControl player = GetComponent<PlayerControl>();
+
+		if ( player && bread )
+			player.setBreadThrown( bread.IsLaunched() );
+		else
+			Debug.Log( "Player / Bread Not Set: " + player + ", " + bread );
 	}
 
 	public void Fire()
