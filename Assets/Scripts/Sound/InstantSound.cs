@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InstantSound : MonoBehaviour
+public class InstantSound : TriggerTarget
 {
 
 	// Use this for initialization
@@ -17,7 +17,7 @@ public class InstantSound : MonoBehaviour
 
 	}
 
-	public void Trigger()
+	public override void Trigger()
 	{
 		GetComponent<SoundSource>().Emit( transform.position );
 	}

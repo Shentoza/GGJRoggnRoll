@@ -8,16 +8,22 @@ public class BreadControl : MonoBehaviour
 
 	public float pullSpeed = 50.0f;
 	public float maxSleep = 0.5f;
+	public float angryFaceTime = 1.0f;
+
+	public Material face;
+	public Material angry;
 
 	private int pullPoint;
 	private float inactive;
 	private bool launched;
+	private float collisionTimer;
 
 	// Use this for initialization
 	void Start()
 	{
 		SetVisible( false );
 		SetPhysicsActive( false );
+		//SetMaterial( face );
 	}
 
 	// Update is called once per frame
@@ -41,6 +47,7 @@ public class BreadControl : MonoBehaviour
 				if ( pullPoint == 0 )
 				{
 					SetVisible( false );
+					launched = false;
 				}
 			}
 		}
@@ -58,17 +65,31 @@ public class BreadControl : MonoBehaviour
 		{
 			inactive = 0.0f;
 		}
+
+		collisionTimer += tpf;
+
+		if ( collisionTimer >= angryFaceTime )
+		{
+			SetMaterial( face );
+		}
 	}
 
 	void OnCollisionEnter( Collision collision )
 	{
 		sound.Emit( transform.position );
+
+		SetMaterial( angry );
+
+		collisionTimer = 0.0f;
 	}
 
 	public void Launch( Vector3 position, Vector3 direction )
 	{
+		launched = true;
+
 		SetVisible( true );
 		SetPhysicsActive( true );
+		SetMaterial( face );
 
 		transform.position = position;
 		transform.LookAt( position + direction );
@@ -88,6 +109,8 @@ public class BreadControl : MonoBehaviour
 		pullPoint = GetComponent<RopeControl>().GetPointCount() - 1;
 
 		SetPhysicsActive( false );
+
+		SetMaterial( face );
 	}
 
 	public void SetPhysicsActive( bool active )
@@ -101,5 +124,24 @@ public class BreadControl : MonoBehaviour
 	public void SetVisible( bool visible )
 	{
 		gameObject.SetActive( visible );
+	}
+
+	public void SetMaterial( Material material )
+	{
+		if ( gameObject.active == false ) return;
+		//MeshRenderer renderer = GetComponentInChildren<MeshRenderer>();
+		Renderer renderer = GameObject.Find( "Toast002" ).GetComponentInChildren<Renderer>();
+		//Renderer renderer = GetComponentInChildren<Renderer>();
+		//Debug.Log( "Material: " + material );
+		//renderer.material = material;
+
+		Material[] mats = renderer.materials;
+		mats[ 0 ] = material;
+		renderer.materials = mats;
+	}
+
+	public bool IsLaunched()
+	{
+		return launched;
 	}
 }
