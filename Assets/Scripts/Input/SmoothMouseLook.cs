@@ -135,7 +135,6 @@ public class SmoothMouseLook : MonoBehaviour
                 transform.localRotation = originalRotation * yQuaternion;
                 oldRotAverageY = rotAverageY;
             }
-            Debug.Log(rotAverageY);
         }
     }
 

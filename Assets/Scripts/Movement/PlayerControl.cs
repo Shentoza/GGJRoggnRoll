@@ -5,12 +5,11 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour {
 
     Rigidbody rig;
-    float maxSpeed = 5.0f;
-    float forwardSpeed = 2.5f;
-    float backwardSpeed = 1.5f;
-    float strafingSpeed = 2.0f;
-    float turningSpeed = 2.0f;
-    float jumpingHeight = 4.0f;
+    public float maxSpeed = 5.0f;
+    public float forwardSpeed = 2.5f;
+    public float backwardSpeed = 1.5f;
+    public float strafingSpeed = 2.0f;
+    public float jumpingHeight = 4.0f;
 
     bool isGrounded = false;
 
@@ -19,18 +18,14 @@ public class PlayerControl : MonoBehaviour {
 
     bool verticalSet = false;
     float verticalValue;
-    public LayerMask mask;
 
-    void Update()
-    {
-    }
-
-    
     void OnCollisionEnter(Collision other)
     {
         foreach(ContactPoint cp in other.contacts)
         {
-            if (Mathf.Abs(transform.position.y - cp.point.y) < 1.1 && rig.velocity.y <= 0.1f)
+            float absDiff = Mathf.Abs(transform.position.y - cp.point.y);
+            Debug.Log(absDiff);
+            if (absDiff <= transform.lossyScale.y + 0.1f && absDiff >= transform.lossyScale.y - 0.1f)
                 isGrounded = true;
         }
     }
