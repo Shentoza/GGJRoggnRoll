@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 71aec784a4e3c444483fb20fde713ef8
+timeCreated: 1485092400
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: arm_l_pole
+    100002: arm_r_pole
+    100004: be_l_ankle_01
+    100006: be_l_wrist_01
+    100008: be_nose_01
+    100010: be_pivot_start01
+    100012: be_r_ankle_01
+    100014: be_r_wrist_01
+    100016: bind_chest_a01
+    100018: bind_chest_b01
+    100020: bind_head_01
+    100022: bind_l_ankle_01
+    100024: bind_l_elbow_01
+    100026: bind_l_foot_a01
+    100028: bind_l_foot_b01
+    100030: bind_l_foot_c01
+    100032: bind_l_knee_01
+    100034: bind_l_leg_01
+    100036: bind_l_shoulder_a01
+    100038: bind_l_shoulder_b01
+    100040: bind_l_wrist_01
+    100042: bind_l_wrist_02
+    100044: bind_l_wrist_05
+    100046: bind_l_wrist_06
+    100048: bind_l_wrist_07
+    100050: bind_l_wrist_08
+    100052: bind_l_wrist_09
+    100054: bind_neck_a01
+    100056: bind_neck_b01
+    100058: bind_nose_01
+    100060: bind_pivot_01
+    100062: bind_pivot_start01
+    100064: bind_r_ankle_01
+    100066: bind_r_elbow_01
+    100068: bind_r_foot_a01
+    100070: bind_r_foot_b01
+    100072: bind_r_foot_c01
+    100074: bind_r_knee_01
+    100076: bind_r_leg_01
+    100078: bind_r_shoulder_a01
+    100080: bind_r_shoulder_b01
+    100082: bind_r_wrist_01
+    100084: bind_r_wrist_02
+    100086: bind_r_wrist_05
+    100088: bind_r_wrist_06
+    100090: bind_r_wrist_07
+    100092: bind_r_wrist_08
+    100094: bind_r_wrist_09
+    100096: bind_stomach_01
+    100098: bind_tail_a01
+    100100: bind_tail_b01
+    100102: bind_tail_c01
+    100104: bind_tail_d01
+    100106: bind_tail_e01
+    100108: bind_tail_f01
+    100110: bind_tail_g01
+    100112: bind_tail_g02
+    100114: bind_tail_h01
+    100116: bind_tail_h01 1
+    100118: bottom
+    100120: ik_l_handle
+    100122: ik_r_handle
+    100124: ikHandle4
+    100126: ikHandle5
+    100128: Knee_l_pole
+    100130: Knee_r_pole
+    100132: left
+    100134: Mesh
+    100136: persp1
+    100138: toast_ring:Ring
+    100140: toast_ring:Toast
+    100142: Udolfo:default1
+    100144: //RootNode
+    400000: arm_l_pole
+    400002: arm_r_pole
+    400004: be_l_ankle_01
+    400006: be_l_wrist_01
+    400008: be_nose_01
+    400010: be_pivot_start01
+    400012: be_r_ankle_01
+    400014: be_r_wrist_01
+    400016: bind_chest_a01
+    400018: bind_chest_b01
+    400020: bind_head_01
+    400022: bind_l_ankle_01
+    400024: bind_l_elbow_01
+    400026: bind_l_foot_a01
+    400028: bind_l_foot_b01
+    400030: bind_l_foot_c01
+    400032: bind_l_knee_01
+    400034: bind_l_leg_01
+    400036: bind_l_shoulder_a01
+    400038: bind_l_shoulder_b01
+    400040: bind_l_wrist_01
+    400042: bind_l_wrist_02
+    400044: bind_l_wrist_05
+    400046: bind_l_wrist_06
+    400048: bind_l_wrist_07
+    400050: bind_l_wrist_08
+    400052: bind_l_wrist_09
+    400054: bind_neck_a01
+    400056: bind_neck_b01
+    400058: bind_nose_01
+    400060: bind_pivot_01
+    400062: bind_pivot_start01
+    400064: bind_r_ankle_01
+    400066: bind_r_elbow_01
+    400068: bind_r_foot_a01
+    400070: bind_r_foot_b01
+    400072: bind_r_foot_c01
+    400074: bind_r_knee_01
+    400076: bind_r_leg_01
+    400078: bind_r_shoulder_a01
+    400080: bind_r_shoulder_b01
+    400082: bind_r_wrist_01
+    400084: bind_r_wrist_02
+    400086: bind_r_wrist_05
+    400088: bind_r_wrist_06
+    400090: bind_r_wrist_07
+    400092: bind_r_wrist_08
+    400094: bind_r_wrist_09
+    400096: bind_stomach_01
+    400098: bind_tail_a01
+    400100: bind_tail_b01
+    400102: bind_tail_c01
+    400104: bind_tail_d01
+    400106: bind_tail_e01
+    400108: bind_tail_f01
+    400110: bind_tail_g01
+    400112: bind_tail_g02
+    400114: bind_tail_h01
+    400116: bind_tail_h01 1
+    400118: bottom
+    400120: ik_l_handle
+    400122: ik_r_handle
+    400124: ikHandle4
+    400126: ikHandle5
+    400128: Knee_l_pole
+    400130: Knee_r_pole
+    400132: left
+    400134: Mesh
+    400136: persp1
+    400138: toast_ring:Ring
+    400140: toast_ring:Toast
+    400142: Udolfo:default1
+    400144: //RootNode
+    4300000: toast_ring:Toast
+    4300002: toast_ring:Ring
+    4300004: Udolfo:default1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: toast_ring:Ring
+    13700002: toast_ring:Toast
+    13700004: Udolfo:default1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: arm_l_pole
+        weight: 1
+      - path: arm_r_pole
+        weight: 1
+      - path: bind_pivot_start01
+        weight: 1
+      - path: bind_pivot_start01/be_pivot_start01
+        weight: 1
+      - path: bind_pivot_start01/bind_l_leg_01
+        weight: 1
+      - path: bind_pivot_start01/bind_l_leg_01/bind_l_knee_01
+        weight: 1
+      - path: bind_pivot_start01/bind_l_leg_01/bind_l_knee_01/be_l_ankle_01
+        weight: 1
+      - path: bind_pivot_start01/bind_l_leg_01/bind_l_knee_01/be_l_ankle_01/bind_l_ankle_01
+        weight: 1
+      - path: bind_pivot_start01/bind_l_leg_01/bind_l_knee_01/be_l_ankle_01/bind_l_ankle_01/bind_l_foot_a01
+        weight: 1
+      - path: bind_pivot_start01/bind_l_leg_01/bind_l_knee_01/be_l_ankle_01/bind_l_ankle_01/bind_l_foot_a01/bind_l_foot_b01
+        weight: 1
+      - path: bind_pivot_start01/bind_l_leg_01/bind_l_knee_01/be_l_ankle_01/bind_l_ankle_01/bind_l_foot_a01/bind_l_foot_b01/bind_l_foot_c01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01/bind_l_shoulder_b01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01/bind_l_shoulder_b01/bind_l_elbow_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01/bind_l_shoulder_b01/bind_l_elbow_01/be_l_wrist_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01/bind_l_shoulder_b01/bind_l_elbow_01/be_l_wrist_01/bind_l_wrist_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01/bind_l_shoulder_b01/bind_l_elbow_01/be_l_wrist_01/bind_l_wrist_01/bind_l_wrist_02
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01/bind_l_shoulder_b01/bind_l_elbow_01/be_l_wrist_01/bind_l_wrist_01/bind_l_wrist_02/bind_l_wrist_05
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01/bind_l_shoulder_b01/bind_l_elbow_01/be_l_wrist_01/bind_l_wrist_01/bind_l_wrist_02/bind_l_wrist_05/bind_l_wrist_07
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01/bind_l_shoulder_b01/bind_l_elbow_01/be_l_wrist_01/bind_l_wrist_01/bind_l_wrist_02/bind_l_wrist_05/bind_l_wrist_07/bind_l_wrist_06
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01/bind_l_shoulder_b01/bind_l_elbow_01/be_l_wrist_01/bind_l_wrist_01/bind_l_wrist_02/bind_l_wrist_08
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_l_shoulder_a01/bind_l_shoulder_b01/bind_l_elbow_01/be_l_wrist_01/bind_l_wrist_01/bind_l_wrist_02/bind_l_wrist_08/bind_l_wrist_09
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_neck_a01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_neck_a01/bind_neck_b01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_neck_a01/bind_neck_b01/bind_head_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_neck_a01/bind_neck_b01/bind_head_01/bind_nose_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_neck_a01/bind_neck_b01/bind_head_01/bind_nose_01/be_nose_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01/bind_r_shoulder_b01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01/bind_r_shoulder_b01/bind_r_elbow_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01/bind_r_shoulder_b01/bind_r_elbow_01/be_r_wrist_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01/bind_r_shoulder_b01/bind_r_elbow_01/be_r_wrist_01/bind_r_wrist_01
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01/bind_r_shoulder_b01/bind_r_elbow_01/be_r_wrist_01/bind_r_wrist_01/bind_r_wrist_02
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01/bind_r_shoulder_b01/bind_r_elbow_01/be_r_wrist_01/bind_r_wrist_01/bind_r_wrist_02/bind_r_wrist_05
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01/bind_r_shoulder_b01/bind_r_elbow_01/be_r_wrist_01/bind_r_wrist_01/bind_r_wrist_02/bind_r_wrist_05/bind_r_wrist_07
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01/bind_r_shoulder_b01/bind_r_elbow_01/be_r_wrist_01/bind_r_wrist_01/bind_r_wrist_02/bind_r_wrist_05/bind_r_wrist_07/bind_r_wrist_06
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01/bind_r_shoulder_b01/bind_r_elbow_01/be_r_wrist_01/bind_r_wrist_01/bind_r_wrist_02/bind_r_wrist_08
+        weight: 1
+      - path: bind_pivot_start01/bind_pivot_01/bind_stomach_01/bind_chest_a01/bind_chest_b01/bind_r_shoulder_a01/bind_r_shoulder_b01/bind_r_elbow_01/be_r_wrist_01/bind_r_wrist_01/bind_r_wrist_02/bind_r_wrist_08/bind_r_wrist_09
+        weight: 1
+      - path: bind_pivot_start01/bind_r_leg_01
+        weight: 1
+      - path: bind_pivot_start01/bind_r_leg_01/bind_r_knee_01
+        weight: 1
+      - path: bind_pivot_start01/bind_r_leg_01/bind_r_knee_01/be_r_ankle_01
+        weight: 1
+      - path: bind_pivot_start01/bind_r_leg_01/bind_r_knee_01/be_r_ankle_01/bind_r_ankle_01
+        weight: 1
+      - path: bind_pivot_start01/bind_r_leg_01/bind_r_knee_01/be_r_ankle_01/bind_r_ankle_01/bind_r_foot_a01
+        weight: 1
+      - path: bind_pivot_start01/bind_r_leg_01/bind_r_knee_01/be_r_ankle_01/bind_r_ankle_01/bind_r_foot_a01/bind_r_foot_b01
+        weight: 1
+      - path: bind_pivot_start01/bind_r_leg_01/bind_r_knee_01/be_r_ankle_01/bind_r_ankle_01/bind_r_foot_a01/bind_r_foot_b01/bind_r_foot_c01
+        weight: 1
+      - path: bind_pivot_start01/bind_tail_a01
+        weight: 1
+      - path: bind_pivot_start01/bind_tail_a01/bind_tail_b01
+        weight: 1
+      - path: bind_pivot_start01/bind_tail_a01/bind_tail_b01/bind_tail_c01
+        weight: 1
+      - path: bind_pivot_start01/bind_tail_a01/bind_tail_b01/bind_tail_c01/bind_tail_d01
+        weight: 1
+      - path: bind_pivot_start01/bind_tail_a01/bind_tail_b01/bind_tail_c01/bind_tail_d01/bind_tail_f01
+        weight: 1
+      - path: bind_pivot_start01/bind_tail_a01/bind_tail_b01/bind_tail_c01/bind_tail_d01/bind_tail_f01/bind_tail_e01
+        weight: 1
+      - path: bind_pivot_start01/bind_tail_a01/bind_tail_b01/bind_tail_c01/bind_tail_d01/bind_tail_f01/bind_tail_e01/bind_tail_g01
+        weight: 1
+      - path: bind_pivot_start01/bind_tail_a01/bind_tail_b01/bind_tail_c01/bind_tail_d01/bind_tail_f01/bind_tail_e01/bind_tail_g01/bind_tail_h01
+        weight: 1
+      - path: bind_pivot_start01/bind_tail_a01/bind_tail_b01/bind_tail_c01/bind_tail_d01/bind_tail_f01/bind_tail_e01/bind_tail_g02
+        weight: 1
+      - path: bind_pivot_start01/bind_tail_a01/bind_tail_b01/bind_tail_c01/bind_tail_d01/bind_tail_f01/bind_tail_e01/bind_tail_g02/bind_tail_h01
+          1
+        weight: 1
+      - path: bottom
+        weight: 1
+      - path: ik_l_handle
+        weight: 1
+      - path: ik_r_handle
+        weight: 1
+      - path: ikHandle4
+        weight: 1
+      - path: ikHandle5
+        weight: 1
+      - path: Knee_l_pole
+        weight: 1
+      - path: Knee_r_pole
+        weight: 1
+      - path: left
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh/toast_ring:Ring
+        weight: 1
+      - path: Mesh/toast_ring:Toast
+        weight: 1
+      - path: Mesh/Udolfo:default1
+        weight: 1
+      - path: persp1
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
