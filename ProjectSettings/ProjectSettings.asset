@@ -463,8 +463,9 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudServicesEnabled:
+    UNet: 1
+  cloudProjectId: 8a4761fd-c554-4a43-afa6-43112fbf9301
+  projectName: UnitySkeleton
+  organizationId: shentoza
   cloudEnabled: 0

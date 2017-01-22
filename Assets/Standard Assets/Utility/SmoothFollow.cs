@@ -56,6 +56,7 @@ namespace UnityStandardAssets.Utility
 
 			// Always look at the target
 			transform.LookAt(target);
+            Debug.DrawRay(this.transform.position, target.forward*10, Color.red);
 		}
 	}
 }

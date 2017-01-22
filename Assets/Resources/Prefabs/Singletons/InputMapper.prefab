@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionMappings:
   - ActionName: Jump
-    Keys: 20000000
+    Keys: 200000004a010000
   AxisMappings:
   - AxisName: Left
     AxisKeys:

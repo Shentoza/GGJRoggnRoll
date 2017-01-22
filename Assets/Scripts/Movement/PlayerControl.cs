@@ -10,44 +10,31 @@ public class PlayerControl : MonoBehaviour {
     float backwardSpeed = 1.5f;
     float strafingSpeed = 2.0f;
     float turningSpeed = 2.0f;
-    float jumpingHeight = 7.0f;
+    float jumpingHeight = 4.0f;
 
-    bool canJump = false;
+    bool isGrounded = false;
 
     bool horizontalSet = false;
     float horizontalValue;
 
     bool verticalSet = false;
     float verticalValue;
+    public OrbitCamera cam;
+    public LayerMask mask;
 
-    Vector3 oldForwardDirection;
-
-    void FixedUpdate()
+    void Update()
     {
-       // aus irgendeinem Grund ist der RightStickVertical negativ(ganz nach oben ausgelenkt: -1), also input *-1
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
-        float yawValue = Mathf.Abs(mouseX) > Mathf.Abs(Input.GetAxis("RightStickHorizontal") * turningSpeed) ? mouseX : Input.GetAxis("RightStickHorizontal") * turningSpeed;
-        float pitchValue = Mathf.Abs(mouseY) > Mathf.Abs(-Input.GetAxis("RightStickVertical")) ? mouseY : -Input.GetAxis("RightStickVertical");
-        Vector2 mouseMovement = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-        Vector2 stickMovement = new Vector2(Mathf.Abs(Input.GetAxis("RightStickHorizontal") * turningSpeed), Mathf.Abs(-Input.GetAxis("RightStickVertical")));
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit rayInfo;
-        Physics.Raycast(ray, out rayInfo);
-        transform.LookAt(new Vector3(rayInfo.point.x, transform.position.y, rayInfo.point.z));
-
-        if (Mathf.Abs(yawValue) > 0.2f)
-            transform.Rotate(Vector3.up, yawValue);
     }
 
-
+    
     void OnCollisionEnter(Collision other)
     {
         foreach(ContactPoint cp in other.contacts)
         {
+            Debug.Log(cp.point.y);
             if (Mathf.Abs(transform.position.y - cp.point.y) < 1.1 && rig.velocity.y <= 0.1f)
-                canJump = true;
+                isGrounded = true;
         }
     }
 
@@ -57,6 +44,7 @@ public class PlayerControl : MonoBehaviour {
         InputMapper.Instance.AddActionMapping("Jump", Jump);
         InputMapper.Instance.AddAxisMapping("Left", StrafeInput);
         InputMapper.Instance.AddAxisMapping("Up", WalkInput);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void StrafeInput(float axisValue)
@@ -78,7 +66,6 @@ public class PlayerControl : MonoBehaviour {
 
     void Move()
     {
-        Debug.Log("Movee");
         horizontalSet = false;
         verticalSet = false;
 
@@ -91,9 +78,9 @@ public class PlayerControl : MonoBehaviour {
 
     void Jump()
     {
-        if(canJump)
+        if(isGrounded)
         { 
-            canJump = false;
+            isGrounded = false;
             rig.velocity = new Vector3(rig.velocity.x, jumpingHeight, rig.velocity.z);
         }
     }
