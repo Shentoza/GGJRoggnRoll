@@ -19,6 +19,8 @@ public class PlayerControl : MonoBehaviour {
     bool verticalSet = false;
     float verticalValue;
 
+    bool breadThrown = false;
+
     void OnCollisionEnter(Collision other)
     {
         foreach(ContactPoint cp in other.contacts)
@@ -30,6 +32,10 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
+    public void setBreadThrown(bool value)
+    {
+        breadThrown = value;
+    }
 
 	void Start () {
         rig = GetComponent<Rigidbody>();
@@ -61,6 +67,12 @@ public class PlayerControl : MonoBehaviour {
         horizontalSet = false;
         verticalSet = false;
 
+
+        if(breadThrown)
+        {
+            rig.velocity = new Vector3(0.0f, rig.velocity.y, 0.0f);
+            return;
+        }
         Vector3 forwardSpeedVector = transform.forward * verticalValue * forwardSpeed;
         Vector3 strafeSpeedVector = transform.right * horizontalValue * strafingSpeed;
         Vector3 speedSum = Vector3.ClampMagnitude(forwardSpeedVector + strafeSpeedVector, maxSpeed);
