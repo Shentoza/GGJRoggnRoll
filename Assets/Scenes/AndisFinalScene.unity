@@ -1786,6 +1786,21 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: ccdbd1848af3ed74c8a2d04c5911c8f9, type: 3}
   m_PrefabInternal: {fileID: 818056572}
+--- !u!54 &219894161
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219894160}
+  serializedVersion: 2
+  m_Mass: 4
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &219894164
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3201,8 +3216,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 360480492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.2, y: 0.27, z: 5.73}
-  m_LocalScale: {x: 5, y: 2, z: 2}
+  m_LocalPosition: {x: -8.26, y: 0.27, z: 5.73}
+  m_LocalScale: {x: 12.887754, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 80
@@ -3350,7 +3365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c251616ad6f923b49b96fa5362011f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLights: 1
+  maxSonicSources: 5
+  SonicSourcePrefab: {fileID: 0}
   initialIntensity: 0.001
   initialRange: 0.001
   maxRange: 10
@@ -5982,6 +5998,21 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: ccdbd1848af3ed74c8a2d04c5911c8f9, type: 3}
   m_PrefabInternal: {fileID: 142840461}
+--- !u!54 &694371081
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 694371080}
+  serializedVersion: 2
+  m_Mass: 4
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &694371084
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9101,7 +9132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c251616ad6f923b49b96fa5362011f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLights: 1
+  maxSonicSources: 5
+  SonicSourcePrefab: {fileID: 0}
   initialIntensity: 0.001
   initialRange: 0.001
   maxRange: 10
@@ -10262,7 +10294,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c251616ad6f923b49b96fa5362011f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLights: 1
+  maxSonicSources: 5
+  SonicSourcePrefab: {fileID: 0}
   initialIntensity: 0.001
   initialRange: 0.001
   maxRange: 10
@@ -13277,6 +13310,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96099f261a388b844bdd80c870a8c001, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1568763492 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 96099f261a388b844bdd80c870a8c001, type: 3}
+  m_PrefabInternal: {fileID: 1568763491}
+--- !u!64 &1568763493
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1568763492}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: 96099f261a388b844bdd80c870a8c001, type: 3}
 --- !u!1 &1570744281 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 192808, guid: e7a9a9223389ed54e84182a60e3aaa03, type: 2}
@@ -13737,7 +13788,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
+  m_Convex: 0
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
@@ -14502,7 +14553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c251616ad6f923b49b96fa5362011f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLights: 1
+  maxSonicSources: 5
+  SonicSourcePrefab: {fileID: 0}
   initialIntensity: 0.001
   initialRange: 0.001
   maxRange: 10
@@ -14536,6 +14588,21 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: c8dab747a3f16c14f8485c8a54a17072, type: 3}
+--- !u!54 &1831857080
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1831857078}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1832141446
 GameObject:
   m_ObjectHideFlags: 0
@@ -15304,7 +15371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c251616ad6f923b49b96fa5362011f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLights: 1
+  maxSonicSources: 5
+  SonicSourcePrefab: {fileID: 0}
   initialIntensity: 0.001
   initialRange: 0.001
   maxRange: 10
@@ -15942,6 +16010,21 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: ccdbd1848af3ed74c8a2d04c5911c8f9, type: 3}
   m_PrefabInternal: {fileID: 560069758}
+--- !u!54 &2061706014
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2061706013}
+  serializedVersion: 2
+  m_Mass: 4
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &2061706017
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16273,6 +16356,21 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: c8dab747a3f16c14f8485c8a54a17072, type: 3}
+--- !u!54 &2117905052
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117905050}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &2117905054 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: c8dab747a3f16c14f8485c8a54a17072, type: 3}
