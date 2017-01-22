@@ -5,6 +5,9 @@ using UnityEngine;
 public class AudioTrigger : MonoBehaviour
 {
 	public AudioClip audioClip;
+	public bool once = false;
+
+	private bool triggered;
 
 	// Use this for initialization
 	void Start()
@@ -16,6 +19,20 @@ public class AudioTrigger : MonoBehaviour
 	void Update()
 	{
 
+	}
+
+	public void Trigger()
+	{
+		if ( once )
+		{
+			if ( !triggered ) Play();
+		}
+		else
+		{
+			Play();
+		}
+
+		triggered = true;
 	}
 
 	void OnTriggerEnter( Collider collider )

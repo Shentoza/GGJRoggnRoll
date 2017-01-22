@@ -47,6 +47,7 @@ public class BreadControl : MonoBehaviour
 				if ( pullPoint == 0 )
 				{
 					SetVisible( false );
+					launched = false;
 				}
 			}
 		}
@@ -84,6 +85,8 @@ public class BreadControl : MonoBehaviour
 
 	public void Launch( Vector3 position, Vector3 direction )
 	{
+		launched = true;
+
 		SetVisible( true );
 		SetPhysicsActive( true );
 		SetMaterial( face );
@@ -135,5 +138,10 @@ public class BreadControl : MonoBehaviour
 		Material[] mats = renderer.materials;
 		mats[ 0 ] = material;
 		renderer.materials = mats;
+	}
+
+	public bool IsLaunched()
+	{
+		return launched;
 	}
 }
