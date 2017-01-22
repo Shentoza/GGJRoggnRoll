@@ -32,9 +32,11 @@ Shader "FabioTest/EchoVisualizer"
 
 			uniform float4 _LightColor0;
 
-			float4 SoundSourceProperties[8];
+			float4 SoundSourceProperties[5];
 
 			float3 PointLightPosition;
+
+			int SoundsCount;
 
 			struct vertexInput
 			{
@@ -51,8 +53,8 @@ Shader "FabioTest/EchoVisualizer"
 
 			float2 unpack_float(float x)
 			{
-				int a = (int)(x / 1000);
-				int b = (int)(x - (a * 1000));
+				int a = (int)(x / 10000);
+				int b = (int)(x - (a * 10000));
 
 				return float2 (a, b);
 			}
@@ -70,27 +72,24 @@ Shader "FabioTest/EchoVisualizer"
 
 			float4 frag(vertexOutput vOut) : COLOR
 			{
-				float3 pos;
 				float _range = 0;
 
-				float4 OutColor = float4(1.0,0.0,0.0,1.0);
-
-				//for(int i = 0; i < 8; i++)
+				float4 OutColor = float4(0.0,0.0,0.0,1.0);
+				for(int i = 0; i < SoundsCount; i++)
 				{
-					PointLightPosition = float3(SoundSourceProperties[0].xyz);
-					pos+=PointLightPosition;
-					float2 IntensityAndRange = unpack_float(SoundSourceProperties[0].w);
+					PointLightPosition = float3(SoundSourceProperties[i].xyz);
+					float2 IntensityAndRange = unpack_float(SoundSourceProperties[i].w);
 
 					_range = IntensityAndRange.y * 0.01;
-
+					
 					float3 DirectionToLight = PointLightPosition.xyz - vOut.pos.xyz;
 					float DistanceToLight = length(DirectionToLight);
 
-					//if((0.5f*cos(DistanceToLight*100)) >= 0)
-					//	OutColor = float4(1.0,1.0,1.0,1.0) * _range;
-
-					if(sin(DistanceToLight + _Time.y)*2 < 1.0f)
-						OutColor = float4(1.0,1.0,1.0,1.0) * _range;
+					if(DistanceToLight <= _range)
+					{
+						if(sin(DistanceToLight*IntensityAndRange.x-(_Time.y*10))*20.0f < 0.1f)
+							OutColor += float4(0.1, 0.3, 0.8, 0.0);
+					}
 				}
 
 				return OutColor;//float4(OutColor, 1.0);
