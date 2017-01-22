@@ -28,7 +28,9 @@ public class BreadLauncher : MonoBehaviour
 			position -= transform.right * 0.5f;
 			position.y = transform.position.y + ropeOffsetVert;
 
-			bread.Launch( position, transform.forward );
+			Vector3 direction = GameObject.FindObjectOfType<Camera>().transform.forward; //transform.forward
+
+			bread.Launch( position, direction );
 		}
 	}
 }
