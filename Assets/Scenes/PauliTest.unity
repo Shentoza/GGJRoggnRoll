@@ -1058,7 +1058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c251616ad6f923b49b96fa5362011f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLights: 1
+  maxSonicSources: 5
+  SonicSourcePrefab: {fileID: 0}
   initialIntensity: 0.001
   initialRange: 0.001
   maxRange: 10
@@ -1357,24 +1358,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a39d33e7e69434942bf6b085ac00c5ac, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1340623128 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1122677490792034, guid: a4edc70ebe157e7488c469d91df6ddfe,
-    type: 2}
-  m_PrefabInternal: {fileID: 1396297299}
---- !u!114 &1340623136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1340623128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b45e0728c23801439ddc73027e9151c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bread: {fileID: 1187481319}
-  ropeOffsetVert: -0.3
 --- !u!1001 &1360799436
 Prefab:
   m_ObjectHideFlags: 0
@@ -1524,6 +1507,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114872367213779492, guid: a4edc70ebe157e7488c469d91df6ddfe,
+        type: 2}
+      propertyPath: bread
+      value: 
+      objectReference: {fileID: 1187481319}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4edc70ebe157e7488c469d91df6ddfe, type: 2}
   m_IsPrefabParent: 0
@@ -1609,7 +1597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c251616ad6f923b49b96fa5362011f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLights: 1
+  maxSonicSources: 5
+  SonicSourcePrefab: {fileID: 0}
   initialIntensity: 0.001
   initialRange: 0.001
   maxRange: 10
@@ -2166,7 +2155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c251616ad6f923b49b96fa5362011f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLights: 1
+  maxSonicSources: 5
+  SonicSourcePrefab: {fileID: 0}
   initialIntensity: 0.001
   initialRange: 0.001
   maxRange: 10
