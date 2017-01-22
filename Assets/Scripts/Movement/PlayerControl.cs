@@ -19,7 +19,6 @@ public class PlayerControl : MonoBehaviour {
 
     bool verticalSet = false;
     float verticalValue;
-    public OrbitCamera cam;
     public LayerMask mask;
 
     void Update()

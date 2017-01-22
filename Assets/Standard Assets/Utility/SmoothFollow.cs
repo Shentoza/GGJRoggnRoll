@@ -7,7 +7,10 @@ namespace UnityStandardAssets.Utility
 
 		// The target we are following
 		[SerializeField]
-		private Transform target;
+		private Transform followTarget;
+
+        [SerializeField]
+        private Transform viewTarget;
 		// The distance in the x-z plane to the target
 		[SerializeField]
 		private float distance = 10.0f;
@@ -27,12 +30,12 @@ namespace UnityStandardAssets.Utility
 		void LateUpdate()
 		{
 			// Early out if we don't have a target
-			if (!target)
+			if (!followTarget)
 				return;
 
 			// Calculate the current rotation angles
-			var wantedRotationAngle = target.eulerAngles.y;
-			var wantedHeight = target.position.y + height;
+			var wantedRotationAngle = followTarget.eulerAngles.y;
+			var wantedHeight = followTarget.position.y + height;
 
 			var currentRotationAngle = transform.eulerAngles.y;
 			var currentHeight = transform.position.y;
@@ -48,15 +51,18 @@ namespace UnityStandardAssets.Utility
 
 			// Set the position of the camera on the x-z plane to:
 			// distance meters behind the target
-			transform.position = target.position;
+			transform.position = followTarget.position;
 			transform.position -= currentRotation * Vector3.forward * distance;
 
 			// Set the height of the camera
 			transform.position = new Vector3(transform.position.x ,currentHeight , transform.position.z);
 
-			// Always look at the target
-			transform.LookAt(target);
-            Debug.DrawRay(this.transform.position, target.forward*10, Color.red);
+            // Always look at the target
+            Vector3 fluchtPunkt = followTarget.transform.position + (viewTarget.transform.position - followTarget.transform.position) * 10.0f;
+            transform.LookAt(fluchtPunkt);
+            Debug.DrawRay(this.transform.position, followTarget.forward*10, Color.red);
+
+            //
 		}
 	}
 }
