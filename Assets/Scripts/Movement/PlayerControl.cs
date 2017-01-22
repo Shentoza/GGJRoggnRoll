@@ -21,13 +21,15 @@ public class PlayerControl : MonoBehaviour {
 
     bool breadThrown = false;
 
+    float collisionOffset;
+
     void OnCollisionEnter(Collision other)
     {
         foreach(ContactPoint cp in other.contacts)
         {
             float absDiff = Mathf.Abs(transform.position.y - cp.point.y);
-            Debug.Log(absDiff);
-            if (absDiff <= transform.lossyScale.y + 0.1f && absDiff >= transform.lossyScale.y - 0.1f)
+            absDiff -= collisionOffset;
+            if (absDiff <= 0.1f)
                 isGrounded = true;
         }
     }
@@ -39,6 +41,8 @@ public class PlayerControl : MonoBehaviour {
 
 	void Start () {
         rig = GetComponent<Rigidbody>();
+        Collider coll = GetComponent<CapsuleCollider>();
+        collisionOffset = coll.bounds.extents.y;
         InputMapper.Instance.AddActionMapping("Jump", Jump);
         InputMapper.Instance.AddAxisMapping("Left", StrafeInput);
         InputMapper.Instance.AddAxisMapping("Up", WalkInput);
