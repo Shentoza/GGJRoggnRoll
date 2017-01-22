@@ -29,7 +29,6 @@ public class HealthBarBehaviour : MonoBehaviour {
 
     public void ChangeSprite(int health)
     {
-        //int currenthealth = health;
 
        switch(health)
         {
@@ -46,23 +45,7 @@ public class HealthBarBehaviour : MonoBehaviour {
                 img.overrideSprite = mySprites[4];
                 break;
         }
-        
-        //if(spriteRenderer.sprite == health4)
-        //{
-        //    health = 3;
-        //    spriteRenderer.sprite = health3;
-        //} else if(spriteRenderer.sprite == health3)
-        //{
-        //    health = 2;
-        //    spriteRenderer.sprite = health2;
-        //} else if(spriteRenderer.sprite == health2)
-        //{
-        //    health = 1;
-        //    spriteRenderer.sprite = health1;
-        //} else if(spriteRenderer.sprite == health1)
-        //{
-        //    gameOverCanvas.SetActive(true);
-            
+        //TODO: Testen!   
             
         }
             
