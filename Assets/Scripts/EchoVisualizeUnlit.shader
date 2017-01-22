@@ -87,8 +87,8 @@ Shader "FabioTest/EchoVisualizer"
 
 					if(DistanceToLight <= _range)
 					{
-						if(sin(DistanceToLight*IntensityAndRange.x-(_Time.y*10))*20.0f < 0.1f)
-							OutColor += float4(0.1, 0.3, 0.8, 0.0);
+						if(sin(DistanceToLight*(IntensityAndRange.x*1.4f)-(_Time.y*10))*20.0f < 0.1f)
+							OutColor += float4(0.1, 0.3, 0.8, 0.0) * 1/(_range*2);
 					}
 				}
 

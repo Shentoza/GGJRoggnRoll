@@ -34,26 +34,28 @@ public class RopeControl : MonoBehaviour
 
 	public void AddPoint( Vector3 position )
 	{
-		bool add = false;
-		if ( points.Count == 0 || Vector3.Distance( points[ points.Count - 1 ], position ) > 0.1f ) add = true;
+		if (points != null) {
+			bool add = false;
+			if (points.Count == 0 || Vector3.Distance (points [points.Count - 1], position) > 0.1f)
+				add = true;
 
-		if ( add )
-		{
-			points.Add( position );
+			if (add) {
+				points.Add (position);
 
-			LineRenderer lines = GetComponent<LineRenderer>();
+				LineRenderer lines = GetComponent<LineRenderer> ();
 
-			lines.numPositions = points.Count;
-			for ( int i = 0; i < points.Count; i++ )
-			{
-				lines.SetPosition( i, points[ i ] );
+				lines.numPositions = points.Count;
+				for (int i = 0; i < points.Count; i++) {
+					lines.SetPosition (i, points [i]);
+				}
 			}
 		}
 	}
 
 	public void ResetAll( Vector3 position )
 	{
-		points.Clear();
+		if(points != null)
+			points.Clear();
 	}
 
 	void DrawPoints()

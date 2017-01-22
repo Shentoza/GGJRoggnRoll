@@ -16,7 +16,7 @@ public class SonicSphereScript : MonoBehaviour {
 
 	public float MaxRange = 10.0f;
 
-	public float velocity = 1.0f;
+	public float velocity = 5.0f;
 
 	public ArrayList intersectedObjects = new ArrayList();
     Renderer rend;

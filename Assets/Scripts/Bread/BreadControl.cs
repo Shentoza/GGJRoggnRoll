@@ -44,7 +44,7 @@ public class BreadControl : MonoBehaviour
 				transform.position = b;
 				pullPoint--;
 
-				if ( pullPoint == 0 )
+				if ( pullPoint <= 1 )
 				{
 					SetVisible( false );
 					launched = false;
@@ -76,7 +76,8 @@ public class BreadControl : MonoBehaviour
 
 	void OnCollisionEnter( Collision collision )
 	{
-		sound.Emit( transform.position );
+		if(sound != null)
+			sound.Emit( transform.position );
 
 		SetMaterial( angry );
 
