@@ -40,8 +40,12 @@ public class EchoMaterialManager : Singleton<EchoMaterialManager>
 			List<Color> LightPropertiesArray = new List<Color> ();
 			for (int i = 0; i < 100; i++)
 				LightPropertiesArray.Add (new Color (-10000, -10000, -10000, -10000));
-			Mesh.material.SetColorArray (Shader.PropertyToID ("SoundSourceProperties"), LightPropertiesArray);
-			Meshes.Add (Mesh);
+			if (Mesh != null) 
+			{
+				Mesh.material.SetColorArray (Shader.PropertyToID ("SoundSourceProperties"), LightPropertiesArray);
+				Meshes.Add (Mesh);
+			}
+			GameObject.AddComponent<EchoEmitter> ();
 		}
 	}
 
@@ -59,7 +63,6 @@ public class EchoMaterialManager : Singleton<EchoMaterialManager>
 			SonicSphereScript light = GameObject.GetComponent<SonicSphereScript> ();
 		
 			Vector3 LightPosition = light.transform.position;
-			Debug.Log (LightPosition);
 			float range = light.range;
 			range *= 100;
 			Vector2 IntensityAndRange = new Vector2((int) light.intensity, (int) range);
@@ -84,13 +87,14 @@ public class EchoMaterialManager : Singleton<EchoMaterialManager>
 		}
 	}
 
-	public void SpawnEcho(Vector3 Location, float intensity = 10)
+	public void SpawnEcho(Vector3 Location, float intensity = 10, float MaxRange = 1)
 	{
 		GameObject NewEcho = Instantiate (SonicSpherePrefab, Location, Quaternion.identity);
 		NewEcho.tag = "SoundSource";
 
 		SonicSphereScript SonicSphere = NewEcho.GetComponent<SonicSphereScript> ();
 		SonicSphere.intensity = intensity;
+		SonicSphere.MaxRange = MaxRange;
 	}
 
 }

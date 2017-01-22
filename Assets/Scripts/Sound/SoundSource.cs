@@ -19,17 +19,17 @@ public class SoundSource : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		SonicSources = new GameObject[ maxSonicSources ];
-
-		for ( int i = 0; i < maxSonicSources; i++ )
-		{
-			GameObject SonicSource = Instantiate (SonicSourcePrefab);
-
-			SonicSourceScript SonicSourceComp = SonicSource.AddComponent<SonicSourceScript>();
-			SonicSources[ i ] = SonicSource;
-		}
-
-		SonicSourceIndex = 0;
+		//SonicSources = new GameObject[ maxSonicSources ];
+		//
+		//for ( int i = 0; i < maxSonicSources; i++ )
+		//{
+		//	GameObject SonicSource = Instantiate (SonicSourcePrefab);
+		//
+		//	SonicSourceScript SonicSourceComp = SonicSource.AddComponent<SonicSourceScript>();
+		//	SonicSources[ i ] = SonicSource;
+		//}
+		//
+		//SonicSourceIndex = 0;
 	}
 
 	// Update is called once per frame
@@ -40,19 +40,19 @@ public class SoundSource : MonoBehaviour
 
 	public void Emit( Vector3 worldPosition )
 	{
-		GameObject SonicSource = SonicSources[ SonicSourceIndex ];
-		SonicSourceScript SonicSourceComp = SonicSource.GetComponent<SonicSourceScript>();
-
-		SonicSource.transform.position = worldPosition;
-		SonicSource.SetActive( true );
-
-		SonicSourceIndex++;
-
-		if ( SonicSourceIndex >= maxSonicSources ) SonicSourceIndex = 0;
+		//GameObject SonicSource = SonicSources[ SonicSourceIndex ];
+		//SonicSourceScript SonicSourceComp = SonicSource.GetComponent<SonicSourceScript>();
+		//
+		//SonicSource.transform.position = worldPosition;
+		//SonicSource.SetActive( true );
+		//
+		//SonicSourceIndex++;
+		//
+		//if ( SonicSourceIndex >= maxSonicSources ) SonicSourceIndex = 0;
 	}
 
 	void OnCollisionEnter( Collision collision )
 	{
-		Emit( transform.position );
+		//Emit( transform.position );
 	}
 }

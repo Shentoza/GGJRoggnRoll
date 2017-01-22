@@ -23,7 +23,7 @@ public class HealthControl : MonoBehaviour
 	{
 		health -= damage;
 
-        hbBehaviour.ChangeSprite(health);
+        //hbBehaviour.ChangeSprite(health);
 
 		if ( health <= 0 ) Death();
 	}
