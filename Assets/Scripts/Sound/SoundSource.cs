@@ -41,6 +41,7 @@ public class SoundSource : MonoBehaviour
 	public void Emit( Vector3 worldPosition )
 	{
 		GameObject SonicSource = SonicSources[ SonicSourceIndex ];
+		
 		SonicSourceScript SonicSourceComp = SonicSource.GetComponent<SonicSourceScript>();
 
 		SonicSource.transform.position = worldPosition;
