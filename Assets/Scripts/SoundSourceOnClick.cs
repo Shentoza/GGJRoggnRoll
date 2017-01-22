@@ -20,13 +20,12 @@ public class SoundSourceOnClick : MonoBehaviour {
             Ray ray = new Ray(gameObject.transform.position, gameObject.transform.forward);
             RaycastHit hitInfo;
             Physics.Raycast(ray, out hitInfo);
-            if(hitInfo.collider != null)
-            {
-                Debug.Log("hit info: " + hitInfo);
-                Debug.Log("point: " + hitInfo.point);
-                Debug.Log("gameObject: " + hitInfo.collider.gameObject);
-                Instantiate(sonicSourcePrefab, hitInfo.point, Quaternion.identity);
-            }
+			if (hitInfo.collider != null) {
+				EchoMaterialManager.Instance.SpawnEcho (hitInfo.point);
+			} else
+			{
+				Debug.Log ("No hit");
+			}
         }
     }
 }
