@@ -298,7 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c251616ad6f923b49b96fa5362011f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLights: 4
+  maxSonicSources: 5
+  SonicSourcePrefab: {fileID: 0}
   initialIntensity: 0.001
   initialRange: 0.001
   maxRange: 10
@@ -330,6 +331,7 @@ MonoBehaviour:
   rope: {fileID: 114491262654808882}
   pullSpeed: 20
   maxSleep: 0.5
+  angryFaceTime: 1
   face: {fileID: 2100000, guid: 555dfdf7d7c530842a3bc03bc85f75dd, type: 2}
   angry: {fileID: 2100000, guid: 4f4dbf37ddc044f4dac223b6c62aec21, type: 2}
 --- !u!120 &120652907551913866
